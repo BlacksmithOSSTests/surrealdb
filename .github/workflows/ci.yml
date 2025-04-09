@@ -356,7 +356,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        # with:
+        with:
+          cache-on-failure: true # Cache on failure since there are 2 seemingly flaky tests.
         # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install dependencies
