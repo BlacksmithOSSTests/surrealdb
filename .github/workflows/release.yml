@@ -34,7 +34,7 @@ permissions:
 jobs:
   checks:
     name: Pre-release checks
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Verify that the provided branch is either a release branch or a patch branch
         run: |
@@ -62,7 +62,7 @@ jobs:
     name: Bump main version
     if: ${{ inputs.publish }}
     needs: [release]
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
