@@ -346,7 +346,7 @@ jobs:
 
   test:
     name: Test workspace
-    runs-on: [runner-arm64-2xlarge]
+    runs-on: [blacksmith-16vcpu-ubuntu-2204-arm	]
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
