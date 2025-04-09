@@ -32,10 +32,10 @@ jobs:
       matrix:
         include:
           - name: amd64
-            runner: blacksmith-16vcpu-ubuntu-2204
+            runner: blacksmith-32vcpu-ubuntu-2204	
             target: x86_64-unknown-linux-gnu
           - name: arm64
-            runner: blacksmith-16vcpu-ubuntu-2204-arm
+            runner: blacksmith-32vcpu-ubuntu-2204-arm
             target: aarch64-unknown-linux-gnu
     runs-on: ${{ matrix.runner }}
     steps:
@@ -346,7 +346,7 @@ jobs:
 
   test:
     name: Test workspace
-    runs-on: [blacksmith-16vcpu-ubuntu-2204-arm	]
+    runs-on: [blacksmith-32vcpu-ubuntu-2204-arm	]
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
