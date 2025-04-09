@@ -65,7 +65,7 @@ jobs:
 
   format:
     name: Check format
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -76,7 +76,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -88,7 +88,7 @@ jobs:
 
   clippy:
     name: Check clippy
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -99,7 +99,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -114,7 +114,7 @@ jobs:
 
   check:
     name: Check workspace
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -123,7 +123,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -138,7 +138,7 @@ jobs:
 
   check-msrv:
     name: Check workspace MSRV
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     env:
       msrv: "1.84" # This should be updated if the MSRV is updated.
 
@@ -152,7 +152,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -167,7 +167,7 @@ jobs:
 
   check-fuzzing:
     name: Check fuzzing
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -176,7 +176,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
           workspaces: crates/fuzz
@@ -194,7 +194,7 @@ jobs:
 
   check-wasm:
     name: Check Wasm
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -205,7 +205,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -217,7 +217,7 @@ jobs:
 
   check-revision:
     name: Check revision
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
@@ -237,7 +237,7 @@ jobs:
 
   cli-integration:
     name: CLI integration tests
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -246,7 +246,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -258,7 +258,7 @@ jobs:
 
   http-integration:
     name: HTTP integration tests
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -267,7 +267,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -279,7 +279,7 @@ jobs:
 
   ws-integration:
     name: WebSocket integration tests
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -288,7 +288,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -300,7 +300,7 @@ jobs:
 
   ml-integration:
     name: ML integration tests
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -309,7 +309,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -321,7 +321,7 @@ jobs:
 
   graphql-integration:
     name: GraphQL integration
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -330,7 +330,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -386,7 +386,7 @@ jobs:
 
   sdk-build:
     name: Test SDK build
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -395,7 +395,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -409,7 +409,7 @@ jobs:
 
   any-engine:
     name: Rust SDK - Any engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -418,7 +418,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -438,7 +438,7 @@ jobs:
 
   ws-engine:
     name: Rust SDK - WebSocket engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -447,7 +447,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -467,7 +467,7 @@ jobs:
 
   http-engine:
     name: Rust SDK - HTTP engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -476,7 +476,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -496,7 +496,7 @@ jobs:
 
   mem-engine:
     name: Rust SDK - Memory engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -505,7 +505,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -525,7 +525,7 @@ jobs:
 
   file-engine:
     name: Rust SDK - File engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -534,7 +534,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -554,7 +554,7 @@ jobs:
 
   rocksdb-engine:
     name: Rust SDK - RocksDB engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -563,7 +563,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -583,7 +583,7 @@ jobs:
 
   surrealkv-engine:
     name: Rust SDK - SurrealKV engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -592,7 +592,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -612,7 +612,7 @@ jobs:
 
   tikv-engine:
     name: Rust SDK - TiKV engine
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -621,7 +621,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -648,7 +648,7 @@ jobs:
 
   fdb-engine-7-1:
     name: Rust SDK - FoundationDB engine 7.1
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -657,7 +657,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -682,7 +682,7 @@ jobs:
 
   fdb-engine-7-3:
     name: Rust SDK - FoundationDB engine 7.3
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -691,7 +691,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -720,7 +720,7 @@ jobs:
 
   db-upgrade:
     name: Database Upgrade from previous versions
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -729,7 +729,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
@@ -745,7 +745,7 @@ jobs:
 
   lang-tests:
     name: Run SurrealQL language tests
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Install stable toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -754,7 +754,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup cache
-        uses: Swatinem/rust-cache@v2
+        uses: useblacksmith/rust-cache@v3
         with:
           save-if: ${{ github.ref == 'refs/heads/main' }}
           workspaces: crates/language-tests
@@ -776,7 +776,7 @@ jobs:
   sdk-javascript:
     name: JavaScript SDK tests (${{ matrix.version }})
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: build
     strategy:
       fail-fast: false
@@ -821,7 +821,7 @@ jobs:
   sdk-golang:
     name: Golang SDK tests (${{ matrix.version }})
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: build
     strategy:
       fail-fast: false
@@ -844,7 +844,7 @@ jobs:
         run: chmod +x ${{ github.workspace }}/artifacts/surreal
 
       - name: Setup Golang
-        uses: actions/setup-go@v4
+        uses: useblacksmith/setup-go@v6
         with:
           go-version: ${{ matrix.version }}
           check-latest: true
@@ -869,7 +869,7 @@ jobs:
   sdk-python:
     name: Python SDK tests (${{ matrix.version }})
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: build
     strategy:
       fail-fast: false
@@ -892,7 +892,7 @@ jobs:
         run: chmod +x ${{ github.workspace }}/artifacts/surreal
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: useblacksmith/setup-python@v6
         with:
           python-version: ${{ matrix.version }}
 
@@ -920,7 +920,7 @@ jobs:
   sdk-php:
     name: PHP SDK tests (${{ matrix.version }})
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: build
     strategy:
       fail-fast: false
@@ -964,7 +964,7 @@ jobs:
   sdk-dotnet:
     name: .NET SDK tests (${{ matrix.version }})
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: build
     strategy:
       fail-fast: false
@@ -987,7 +987,7 @@ jobs:
         run: chmod +x ${{ github.workspace }}/artifacts/surreal
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: useblacksmith/setup-dotnet@v5
         with:
           dotnet-version: ${{ matrix.version }}
 

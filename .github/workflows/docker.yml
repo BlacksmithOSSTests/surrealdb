@@ -41,7 +41,7 @@ defaults:
 jobs:
   prepare:
     name: Prepare steps
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     outputs:
       tag-prefix: ${{ steps.tag-prefix.outputs.tag-prefix }}
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -73,7 +73,7 @@ jobs:
 
   docker:
     name: Build ${{ matrix.name }} (${{ matrix.build-target }})
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: prepare
     if: ${{ inputs.build }}
     strategy:

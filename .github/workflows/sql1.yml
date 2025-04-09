@@ -20,7 +20,7 @@ defaults:
 jobs:
   publish:
     name: Publish crate
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4

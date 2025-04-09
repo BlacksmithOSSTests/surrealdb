@@ -65,7 +65,7 @@ env:
 jobs:
   prepare-vars:
     name: Prepare vars
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     outputs:
       git-ref: ${{ steps.outputs.outputs.git-ref }}
       name: ${{ steps.outputs.outputs.name }}
@@ -294,7 +294,7 @@ jobs:
 
   docker-builder:
     name: Prepare docker builder
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs: [prepare-vars]
     outputs:
       name: ${{ steps.image.outputs.name }}
@@ -805,7 +805,7 @@ jobs:
     name: Propagate binaries to all regions
     if: ${{ inputs.publish }}
     needs: [publish, package-macos]
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
