@@ -47,8 +47,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build binary
         run: cargo build --target ${{ matrix.target }}
@@ -77,8 +77,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -100,8 +100,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -124,8 +124,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -153,8 +153,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo +${{ env.msrv }} install --debug --locked cargo-make
@@ -178,7 +178,7 @@ jobs:
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
         with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
           workspaces: crates/fuzz
 
       - name: Check fuzzers
@@ -206,8 +206,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -247,8 +247,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -268,8 +268,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -289,8 +289,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -310,8 +310,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -331,8 +331,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -356,8 +356,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install dependencies
         run: sudo apt-get -y update
@@ -396,8 +396,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build local
         working-directory: tests/sdk/local
@@ -419,8 +419,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -448,8 +448,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -477,8 +477,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -506,8 +506,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -535,8 +535,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -564,8 +564,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -593,8 +593,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -622,8 +622,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install TiUP
         timeout-minutes: 10
@@ -658,8 +658,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -692,8 +692,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -730,8 +730,8 @@ jobs:
 
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
-        with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # with:
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install cargo-make
         run: cargo install --debug --locked cargo-make
@@ -756,7 +756,7 @@ jobs:
       - name: Setup cache
         uses: useblacksmith/rust-cache@v3
         with:
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+        # save-if: ${{ github.ref == 'refs/heads/main' }}
           workspaces: crates/language-tests
 
       - name: Build SurrealQL test tool
